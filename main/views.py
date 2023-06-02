@@ -4,15 +4,21 @@ from . models import userDetails
 from django.db import IntegrityError
 # Create your views here.
 
+
+
+def userHome(request):
+    return render(request, 'index.html')
+
+
 def userform(request):
-    return render(request, 'form.html')
+    return render(request, 'Entryform.html')
 
 
 def userStore(request):
     if request.method=='POST':
         userID = request.POST.get('user_id')
         if userDetails.objects.filter(user_id=userID).exists():
-            my_value = "Duplicate value added"
+            my_value = "Duplicate value found"
             return render(request, 'index.html', {'my_value': my_value})
         else:
             userID = request.POST.get('user_id')
@@ -33,8 +39,9 @@ def userStore(request):
             my_value = "sussesfuly added value."
             return render(request, 'index.html', {'my_value': my_value})
 
-def userHome(request):
-    return render(request, 'index.html')
+
+def userRecord(request):
+    return render(request, 'record.html')
 
 
 

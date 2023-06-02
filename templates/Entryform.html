@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% block title %}Entry form..{% endblock title %} {% block template %}
+
+<div class="form-area">
+  <form method="POST" action="{% url 'user-store' %}">
+    {% csrf_token %}
+    <h1 class="form-heading">User input form</h1>
+    <div class="form-group">
+      <label for="">User ID</label>
+      <input type="number" class="form-control" id="" placeholder="Name" name="user_id" required />
+    </div>
+    <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" class="form-control" id="" placeholder="Name" name="user_name" required />
+    </div>
+    <div class="form-group">
+      <label for="">Address</label>
+      <input type="text" class="form-control" id="" placeholder="Address" name="user_address" />
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input type="email" class="form-control" id="" placeholder="email" name="user_email" />
+    </div>
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input type="number" class="form-control" id="" placeholder="phone" name="user_phone" required />
+    </div>
+    <br />
+    <div class="form-group">
+      <input type="submit" class="form-control" id="" name="submit" />
+    </div>
+  </form>
+</div>
+
+{% endblock template %}
