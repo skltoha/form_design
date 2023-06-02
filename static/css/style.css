@@ -92,3 +92,16 @@ hr {
 .table-area {
   margin-inline: auto;
 }
+table {
+  --max-width: 600px;
+  --padding: 2rem;
+  width: min(var(--max-width), 100% - var(--padding));
+  margin-inline: auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  text-align: start;
+}

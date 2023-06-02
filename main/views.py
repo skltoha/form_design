@@ -5,7 +5,6 @@ from django.db import IntegrityError
 # Create your views here.
 
 
-
 def userHome(request):
     return render(request, 'index.html')
 
@@ -31,21 +30,13 @@ def userStore(request):
             userEmail = request.POST.get('user_email')
             userPhone = request.POST.get('user_phone')
             
-            # store   = models.userDetails()
-            # store.user_id=userID
-            # store.user_name=userName
-            # store.user_address=userAdd
-            # store.user_email=userEmail
-            # store.user_phone=userPhone
-            
-            # store.save()
             userDetails.objects.create(user_id=userID, user_name=userName, user_address=userAdd, user_email=userEmail, user_phone=userPhone)
             my_value = "sussesfuly added value."
             return render(request, 'index.html', {'my_value': my_value})
 
 
 def userRecord(request):
-    data = userDetails.objects.all()
+    data = userDetails.objects.all()[0:]
     return render(request, 'record.html', {'data': data})
 
 
