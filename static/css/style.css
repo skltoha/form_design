@@ -43,6 +43,10 @@
   border-radius: 0.375rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+.form-control::placeholder {
+  color: red;
+  opacity: 0.7;
+}
 label {
   color: #fff;
 }
@@ -53,6 +57,8 @@ label {
 input[type="submit"] {
   transition: 0.5s;
   cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 input[type="submit"]:hover {
   background-color: green;
