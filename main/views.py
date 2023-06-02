@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import models
 from . models import userDetails
 from django.db import IntegrityError
@@ -17,6 +17,10 @@ def userform(request):
 def userStore(request):
     if request.method=='POST':
         userID = request.POST.get('user_id')
+        userPhone = request.POST.get('user_phone')
+        if len(userPhone) != 11:
+            return redirect('user-form')
+        
         if userDetails.objects.filter(user_id=userID).exists():
             my_value = "Duplicate value found"
             return render(request, 'index.html', {'my_value': my_value})
