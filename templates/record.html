@@ -3,7 +3,26 @@
 {% block title %}Record{% endblock title %}
 {% block template %}
 <div class="container">
-  <h1>Record</h1>
+
+<div class="table-area">
+  <table border="1">
+    <thead>
+      <th>User ID</th>
+      <th>User Name</th>
+      <th>User Address</th>
+      <th>user Email</th>
+      <th>User Phone</th>
+    </thead>
+    {% for k in data  %}
+      <tr>
+          <td>{{k.user_id}}</td>
+          <td>{{k.user_name}}</td>
+          <td>{{k.user_add}}</td>
+          <td>{{k.user_email}}</td>
+          <td>{{k.user_phone}}</td>
+      </tr>
+      {% endfor %}
 </div>
+
 </div>
 {% endblock template %}

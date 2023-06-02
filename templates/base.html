@@ -12,9 +12,13 @@
   <body>
     <div class="container">
       <h1>HR Management System</h1>
-      <a href="{% url 'user-home' %}">Home</a>
-      <a href="{% url 'user-form' %}">User Entry</a>
-      <a href="{% url 'user-record' %}">User Record</a>
+      <nav>
+        <ul>
+          <li><a href="{% url 'user-home' %}">Home</a></li>
+          <li><a href="{% url 'user-form' %}">User Entry</a></li>
+          <li><a href="{% url 'user-record' %}">User Record</a></li>
+        </ul>
+      </nav>
       <hr />
       <br />
       <p>{{ my_value }}</p>

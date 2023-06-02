@@ -45,7 +45,8 @@ def userStore(request):
 
 
 def userRecord(request):
-    return render(request, 'record.html')
+    data = userDetails.objects.all()
+    return render(request, 'record.html', {'data': data})
 
 
 

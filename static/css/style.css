@@ -64,14 +64,21 @@ input[type="submit"]:hover {
   background-color: green;
   color: #ffffff;
 }
-
+ul {
+  list-style: none;
+  display: flex;
+  padding-inline-start: 0;
+}
+li {
+  float: left;
+  margin-right: 10px;
+}
 a {
   cursor: pointer;
   text-decoration: none;
   color: #ffffff;
   padding: 10px 20px;
   background-color: rgb(11, 75, 51);
-  margin-right: 10px;
   border-radius: 5px;
   text-transform: capitalize;
 }
@@ -80,4 +87,8 @@ a:hover {
 }
 hr {
   margin-top: 20px;
+}
+
+.table-area {
+  margin-inline: auto;
 }
