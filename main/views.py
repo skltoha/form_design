@@ -22,7 +22,7 @@ def userStore(request):
         
         if userDetails.objects.filter(user_id=userID).exists():
             my_value = "Duplicate value found"
-            return render(request, 'index.html', {'my_value': my_value})
+            return render(request, 'record.html', {'my_value': my_value})
         else:
             userID = request.POST.get('user_id')
             userName = request.POST.get('user_name')
@@ -32,7 +32,8 @@ def userStore(request):
             
             userDetails.objects.create(user_id=userID, user_name=userName, user_address=userAdd, user_email=userEmail, user_phone=userPhone)
             my_value = "sussesfuly added value."
-            return render(request, 'index.html', {'my_value': my_value})
+            data = userDetails.objects.all()[0:]
+            return render(request, 'record.html', {'my_value': my_value,'data': data})
 
 
 def userRecord(request):
